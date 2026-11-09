@@ -33,7 +33,6 @@ backend/storage/framework/views/*
 backend/storage/pail/*
 
 # Public storage symlink & hot reload
-backend/public/storage
 backend/public/hot
 backend/public/build
 

@@ -22,7 +22,7 @@
     },
     {
       "src": "/storage/(.*)",
-      "dest": "/backend/storage/app/public/$1"
+      "dest": "/backend/public/storage/$1"
     },
     {
       "src": "/favicon.ico",
