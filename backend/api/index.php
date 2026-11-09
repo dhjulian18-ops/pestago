@@ -31,3 +31,4 @@ if (isset($_GET['migrate']) && $_GET['migrate'] === 'pestago2026') {
 
 // Forward all requests to Laravel entry point
 require __DIR__ . '/../public/index.php';
+

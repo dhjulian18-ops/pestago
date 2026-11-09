@@ -31,3 +31,4 @@ if (isset($_GET['migrate']) && $_GET['migrate'] === 'pestago2026') {
 
 // Forward to backend entry point
 require __DIR__ . '/backend/public/index.php';
+
