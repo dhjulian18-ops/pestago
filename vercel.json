@@ -21,6 +21,10 @@
       "dest": "/backend/public/images/$1"
     },
     {
+      "src": "/storage/(.*)",
+      "dest": "/backend/storage/app/public/$1"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/backend/public/favicon.ico"
     },
