@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="dekGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#fff1f2" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldArch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <linearGradient id="drapeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <filter id="archShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#archShadow)">
+    <!-- Base Platform -->
+    <rect x="35" y="156" width="130" height="8" rx="3" fill="#cbd5e1"/>
+
+    <!-- Gold Hexagon / Arch Structure -->
+    <path d="M 45,156 L 45,85 C 45,45 155,45 155,85 L 155,156" fill="none" stroke="url(#goldArch)" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Chiffon Wedding Drapery -->
+    <path d="M 45,75 C 65,85 75,130 55,156 L 45,156 Z" fill="url(#drapeGrad)" opacity="0.85"/>
+    <path d="M 155,75 C 135,85 125,130 145,156 L 155,156 Z" fill="url(#drapeGrad)" opacity="0.85"/>
+    <path d="M 50,65 C 80,85 120,85 150,65 C 135,78 65,78 50,65 Z" fill="url(#drapeGrad)" opacity="0.9"/>
+
+    <!-- Floral Cascade (Top Left) -->
+    <!-- Green Leaves -->
+    <ellipse cx="44" cy="55" rx="10" ry="5" transform="rotate(-30 44 55)" fill="#10b981"/>
+    <ellipse cx="60" cy="50" rx="10" ry="5" transform="rotate(20 60 50)" fill="#059669"/>
+    <ellipse cx="38" cy="70" rx="9" ry="5" transform="rotate(-60 38 70)" fill="#10b981"/>
+
+    <!-- Blooming Flowers -->
+    <circle cx="50" cy="60" r="11" fill="url(#roseGrad)"/>
+    <circle cx="50" cy="60" r="6" fill="#fbcfe8"/>
+    <circle cx="65" cy="62" r="9" fill="#fb7185"/>
+    <circle cx="65" cy="62" r="4" fill="#ffffff"/>
+    <circle cx="40" cy="74" r="8" fill="#fda4af"/>
+    <circle cx="40" cy="74" r="3.5" fill="#be123c"/>
+
+    <!-- Floral Cluster (Top Right) -->
+    <ellipse cx="150" cy="55" rx="9" ry="5" transform="rotate(30 150 55)" fill="#10b981"/>
+    <circle cx="145" cy="62" r="9" fill="url(#roseGrad)"/>
+    <circle cx="145" cy="62" r="4" fill="#ffffff"/>
+
+    <!-- Romantic Hanging Lanterns / Fairy Lights -->
+    <line x1="85" y1="58" x2="85" y2="80" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="80" y="80" width="10" height="15" rx="2" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+    <circle cx="85" cy="87" r="3" fill="#f59e0b"/>
+
+    <line x1="115" y1="58" x2="115" y2="76" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="110" y="76" width="10" height="15" rx="2" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+    <circle cx="115" cy="83" r="3" fill="#f59e0b"/>
+
+    <!-- Floating Sparkles -->
+    <polygon points="100,68 102,74 108,76 102,78 100,84 98,78 92,76 98,74" fill="#fbbf24"/>
+  </g>
+</svg>

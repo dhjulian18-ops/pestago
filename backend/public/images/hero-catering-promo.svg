@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pestaRedBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="45%" stop-color="#d81a24"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="goldRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#fbbf24"/>
+      <stop offset="70%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="cakeCream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#ffe4e6"/>
+    </linearGradient>
+    <filter id="cakeDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-10" dy="25" stdDeviation="15" flood-color="#4c0519" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- PestaGo Festive Backdrop -->
+  <rect width="500" height="450" fill="url(#pestaRedBg)"/>
+
+  <!-- Golden Wave Ribbons sweeping across bottom -->
+  <path d="M 0,330 C 140,290 310,320 500,270 L 500,450 L 0,450 Z" fill="#7f1d1d"/>
+  <path d="M 0,365 C 160,330 330,355 500,310" fill="none" stroke="url(#goldRibbon)" stroke-width="6" opacity="0.9"/>
+  <path d="M 0,405 C 170,370 340,395 500,350" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+
+  <!-- Celebration Speed / Streamer Lines -->
+  <line x1="380" y1="170" x2="480" y2="130" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <line x1="410" y1="200" x2="495" y2="165" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <line x1="390" y1="240" x2="475" y2="205" stroke="#fef08a" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Dynamic Flying Grand 3-Tier Celebration Cake -->
+  <g transform="translate(195, 140) rotate(-16)" filter="url(#cakeDropShadow)">
+    <!-- Cake Base Stand / Platter -->
+    <ellipse cx="140" cy="205" rx="100" ry="24" fill="#fbbf24"/>
+    <ellipse cx="140" cy="202" rx="96" ry="20" fill="#fef08a"/>
+
+    <!-- Bottom Tier (Tier 1) -->
+    <path d="M 50,150 C 50,135 230,135 230,150 L 230,195 C 230,210 50,210 50,195 Z" fill="url(#cakeCream)"/>
+    <ellipse cx="140" cy="150" rx="90" ry="18" fill="#ffffff"/>
+    <!-- Gold Ribbon around Tier 1 -->
+    <path d="M 50,185 C 50,200 230,200 230,185 L 230,195 C 230,210 50,210 50,195 Z" fill="url(#goldRibbon)"/>
+
+    <!-- Middle Tier (Tier 2) -->
+    <path d="M 75,105 C 75,92 205,92 205,105 L 205,145 C 205,158 75,158 75,145 Z" fill="url(#cakeCream)"/>
+    <ellipse cx="140" cy="105" rx="65" ry="14" fill="#ffffff"/>
+    <!-- Red Strawberry Glaze Drops -->
+    <path d="M 75,110 C 85,125 95,115 105,122 C 115,115 125,125 135,118 C 145,125 155,115 165,122 C 175,115 185,125 205,110" fill="none" stroke="#d81a24" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Top Tier (Tier 3) -->
+    <path d="M 100,65 C 100,55 180,55 180,65 L 180,100 C 180,110 100,110 100,100 Z" fill="url(#cakeCream)"/>
+    <ellipse cx="140" cy="65" rx="40" ry="9" fill="#ffffff"/>
+
+    <!-- Cake Topper: PestaGo Celebration Sparkler Rings -->
+    <circle cx="140" cy="38" r="14" fill="none" stroke="url(#goldRibbon)" stroke-width="3"/>
+    <circle cx="140" cy="38" r="5" fill="#f43f5e"/>
+
+    <!-- Sparkling Candles & Flame -->
+    <line x1="126" y1="62" x2="126" y2="44" stroke="#d81a24" stroke-width="2.5"/>
+    <ellipse cx="126" cy="40" rx="3" ry="5" fill="#f59e0b"/>
+    <line x1="154" y1="62" x2="154" y2="44" stroke="#d81a24" stroke-width="2.5"/>
+    <ellipse cx="154" cy="40" rx="3" ry="5" fill="#f59e0b"/>
+
+    <!-- Champagne Glass Cheers beside -->
+    <g transform="translate(225, 40) rotate(15)">
+      <path d="M 0,0 C 10,0 14,10 14,20 C 14,28 6,32 3,32 L 3,50 L 12,50 L 12,53 L -6,53 L -6,50 L 3,50 L 3,32 C 0,32 -8,28 -8,20 C -8,10 -4,0 0,0 Z" fill="#ffffff" opacity="0.85" stroke="#fde047" stroke-width="1.5"/>
+      <ellipse cx="1" cy="18" rx="6" ry="10" fill="#f59e0b" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Confetti Stars Bursting -->
+  <polygon points="120,80 123,87 130,88 124,92 122,99 119,93 112,90 118,87" fill="#fbbf24"/>
+  <polygon points="410,95 412,100 417,101 413,104 412,109 409,105 404,103 408,100" fill="#ffffff"/>
+  <circle cx="150" cy="110" r="4" fill="#fbbf24"/>
+  <circle cx="430" cy="140" r="5" fill="#fef08a"/>
+</svg>

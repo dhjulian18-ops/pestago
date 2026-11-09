@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="photoStudioBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <radialGradient id="cameraSpotlight" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lensGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="35%" stop-color="#6366f1"/>
+      <stop offset="70%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="metallicBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="url(#photoStudioBg)"/>
+  <circle cx="300" cy="170" r="240" fill="url(#cameraSpotlight)"/>
+
+  <!-- Bokeh particles -->
+  <circle cx="90" cy="70" r="14" fill="#38bdf8" opacity="0.3"/>
+  <circle cx="150" cy="110" r="24" fill="#fbbf24" opacity="0.2"/>
+  <circle cx="510" cy="80" r="28" fill="#ec4899" opacity="0.25"/>
+  <circle cx="530" cy="240" r="16" fill="#38bdf8" opacity="0.2"/>
+  <circle cx="80" cy="260" r="20" fill="#f59e0b" opacity="0.25"/>
+
+  <!-- Film Strip / Cinema Accents in Background -->
+  <g opacity="0.2" transform="rotate(-8 300 170)">
+    <rect x="60" y="30" width="480" height="40" rx="4" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="80" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="120" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="160" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="200" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="240" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="280" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="320" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="360" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="400" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="440" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+    <rect x="480" y="40" width="20" height="20" rx="2" fill="#94a3b8"/>
+  </g>
+
+  <!-- Photo Polaroids / Wedding Gallery Frames Behind Camera -->
+  <g transform="translate(130, 85) rotate(-12)">
+    <rect width="130" height="150" rx="6" fill="#ffffff" opacity="0.9" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.5))"/>
+    <rect x="10" y="10" width="110" height="105" rx="3" fill="#ffe4e6"/>
+    <!-- Couple silhouette in polaroid -->
+    <circle cx="55" cy="50" r="16" fill="#be123c" opacity="0.5"/>
+    <circle cx="75" cy="55" r="14" fill="#881337" opacity="0.6"/>
+    <path d="M 40,105 C 40,80 50,70 65,70 C 80,70 90,80 90,105 Z" fill="#9f1239" opacity="0.6"/>
+    <text x="65" y="134" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#64748b">HAPPY WEDDING</text>
+  </g>
+
+  <g transform="translate(340, 75) rotate(10)">
+    <rect width="130" height="150" rx="6" fill="#ffffff" opacity="0.9" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.5))"/>
+    <rect x="10" y="10" width="110" height="105" rx="3" fill="#e0e7ff"/>
+    <!-- Rings & flowers silhouette -->
+    <circle cx="52" cy="62" r="16" fill="none" stroke="#f59e0b" stroke-width="4"/>
+    <circle cx="72" cy="62" r="16" fill="none" stroke="#fbbf24" stroke-width="4"/>
+    <polygon points="52,42 48,34 56,34" fill="#38bdf8"/>
+    <text x="65" y="134" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#64748b">CINEMATIC 4K</text>
+  </g>
+
+  <!-- Professional Full Frame Camera Centerpiece -->
+  <g transform="translate(180, 150)">
+    <!-- Tripod / Mount Base -->
+    <polygon points="120,180 100,225 140,225" fill="#334155" opacity="0.5"/>
+
+    <!-- Camera Body -->
+    <rect x="20" y="45" width="200" height="135" rx="18" fill="url(#metallicBody)" stroke="#475569" stroke-width="2"/>
+    <!-- Grip -->
+    <path d="M 20,55 Q 0,85 10,145 Q 16,170 30,175 L 30,55 Z" fill="#1e293b"/>
+    <!-- Viewfinder Pentaprism -->
+    <polygon points="85,45 105,18 135,18 155,45" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+    <rect x="102" y="24" width="36" height="12" rx="2" fill="#334155"/>
+    <!-- Hotshoe & Dials -->
+    <rect x="108" y="10" width="24" height="8" rx="2" fill="url(#goldAccent)"/>
+    <rect x="35" y="36" width="28" height="9" rx="2" fill="#475569"/>
+    <rect x="175" y="36" width="30" height="9" rx="2" fill="#475569"/>
+    <!-- Red recording dot -->
+    <circle cx="52" cy="65" r="5" fill="#ef4444"/>
+
+    <!-- Professional 85mm f/1.4 Lens Cylinder -->
+    <rect x="75" y="72" width="90" height="85" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- Gold Luxury Ring on Lens -->
+    <rect x="74" y="85" width="92" height="6" fill="url(#goldAccent)"/>
+    <!-- Lens Element Rings -->
+    <circle cx="120" cy="115" r="46" fill="#090d16" stroke="#475569" stroke-width="3"/>
+    <circle cx="120" cy="115" r="38" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- Front Glass Element with Flare -->
+    <circle cx="120" cy="115" r="30" fill="url(#lensGlass)" opacity="0.85"/>
+    <circle cx="120" cy="115" r="22" fill="#0f172a" opacity="0.7"/>
+    <!-- Aperture Blades -->
+    <polygon points="120,105 130,118 114,124 110,110" fill="#1e293b" opacity="0.8"/>
+    <!-- Glass Highlights / Flare -->
+    <path d="M 100,98 A 24 24 0 0 1 138,98" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+    <circle cx="132" cy="128" r="4" fill="#ffffff" opacity="0.7"/>
+    <circle cx="110" cy="125" r="2.5" fill="#38bdf8" opacity="0.9"/>
+  </g>
+
+  <!-- Drone Silhouette on Top Corner -->
+  <g transform="translate(420, 45) scale(0.65)" opacity="0.85">
+    <ellipse cx="60" cy="40" rx="20" ry="10" fill="#e2e8f0"/>
+    <circle cx="60" cy="40" r="6" fill="#0284c7"/>
+    <line x1="20" y1="20" x2="60" y2="40" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="100" y1="20" x2="60" y2="40" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="20" y1="60" x2="60" y2="40" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="100" y1="60" x2="60" y2="40" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Propellers -->
+    <ellipse cx="20" cy="20" rx="22" ry="4" fill="#38bdf8" opacity="0.6"/>
+    <ellipse cx="100" cy="20" rx="22" ry="4" fill="#38bdf8" opacity="0.6"/>
+    <ellipse cx="20" cy="60" rx="22" ry="4" fill="#38bdf8" opacity="0.6"/>
+    <ellipse cx="100" cy="60" rx="22" ry="4" fill="#38bdf8" opacity="0.6"/>
+  </g>
+
+  <!-- Tag / Badge "FULL DAY CINEMATIC" -->
+  <g transform="translate(30, 315)">
+    <rect width="180" height="34" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <circle cx="20" cy="17" r="4" fill="#ef4444"/>
+    <text x="34" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="0.5">2 CAM + 4K DRONE</text>
+  </g>
+</svg>

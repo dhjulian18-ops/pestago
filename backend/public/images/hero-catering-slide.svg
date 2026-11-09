@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="100%" height="100%">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="catCardShadow" x="-5%" y="-5%" width="110%" height="118%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- 3D Popout Shadow -->
+    <filter id="catPopoutShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Warm Emerald Glow Behind 3D Graphic -->
+    <radialGradient id="glowCatering" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#021a14" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Luxury Emerald Card Background -->
+    <linearGradient id="bgCatering" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022018"/>
+      <stop offset="50%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#011812"/>
+    </linearGradient>
+
+    <!-- Metallic Emerald Stroke -->
+    <linearGradient id="emeraldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Phone Bezel Gradient -->
+    <linearGradient id="phoneBezelCat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="35%" stop-color="#059669"/>
+      <stop offset="70%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+
+    <!-- Screen Gradient -->
+    <linearGradient id="phoneScreenCat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="60%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#021a14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BASE CARD (Dimensions: 800 x 296, leaving space for 3D Popout) -->
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="url(#bgCatering)" filter="url(#catCardShadow)"/>
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="none" stroke="url(#emeraldBorder)" stroke-width="1.5"/>
+
+  <!-- Subtle Ambient Pattern inside Card Base -->
+  <circle cx="200" cy="80" r="140" fill="#10b981" opacity="0.05"/>
+  <circle cx="700" cy="260" r="180" fill="#34d399" opacity="0.04"/>
+
+  <!-- LEFT CONTENT AREA: Typography & CTA -->
+  <g transform="translate(64, 72)">
+    <!-- Pill Category Badge -->
+    <rect x="0" y="0" width="224" height="26" rx="13" fill="#10b981" fill-opacity="0.18" stroke="#34d399" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="14" y="17" fill="#6ee7b7" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">★ CATERING &amp; JAMUAN PILIHAN</text>
+
+    <!-- Headline -->
+    <text x="0" y="62" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.5">Prasmanan Rp 18.500.000*</text>
+
+    <!-- Description Lines -->
+    <text x="0" y="96" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">Pilihan 50+ menu Nusantara &amp; Western higienis, halal,</text>
+    <text x="0" y="117" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">dengan fasilitas free test food untuk 4 orang calon pengantin.</text>
+
+    <!-- CTA Button -->
+    <g transform="translate(0, 142)">
+      <rect width="216" height="44" rx="22" fill="#ffffff" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.18))"/>
+      <text x="108" y="27" text-anchor="middle" fill="#065f46" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.3">LIHAT PAKET CATERING ➔</text>
+    </g>
+
+    <!-- Footnote Guarantee -->
+    <text x="2" y="212" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500">*Gratis Test Food &amp; Konsultasi Menu Eksklusif</text>
+  </g>
+
+  <!-- RIGHT CONTENT AREA: 3D Pop-Out Graphics (Pops out into transparent space!) -->
+  <g id="popout3DCatering">
+    <!-- Ambient Radial Glow behind the phone -->
+    <circle cx="640" cy="180" r="160" fill="url(#glowCatering)"/>
+
+    <!-- Floating Sparkles & Culinary Accents -->
+    <circle cx="510" cy="70" r="3.5" fill="#6ee7b7"/>
+    <circle cx="780" cy="95" r="4.5" fill="#a7f3d0"/>
+    <polygon points="530,40 533,46 540,48 534,50 531,56 528,50 522,48 528,46" fill="#6ee7b7"/>
+
+    <!-- 3D Luxury Cloche (Food Cover) Floating on Left of Phone -->
+    <g transform="translate(470, 105) rotate(-15)" filter="drop-shadow(0 8px 14px rgba(0,0,0,0.35))">
+      <!-- Cloche Dome -->
+      <path d="M 10,45 C 10,15 65,15 65,45 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+      <ellipse cx="37.5" cy="45" rx="28" ry="6" fill="#94a3b8"/>
+      <!-- Cloche Handle -->
+      <circle cx="37.5" cy="12" r="5" fill="#fbbf24"/>
+      <rect x="36" y="15" width="3" height="5" fill="#fbbf24"/>
+    </g>
+
+    <!-- The 3D Phone Mockup (Popping out at y: 14 to 346) -->
+    <g filter="url(#catPopoutShadow)" transform="translate(540, 14)">
+      <!-- Outer Phone Body -->
+      <rect x="0" y="0" width="194" height="332" rx="36" fill="#06281e" stroke="url(#phoneBezelCat)" stroke-width="3.5"/>
+
+      <!-- Screen Container -->
+      <g clip-path="url(#catPhoneClip)">
+        <clipPath id="catPhoneClip">
+          <rect x="6" y="6" width="182" height="320" rx="30"/>
+        </clipPath>
+
+        <!-- Screen Background -->
+        <rect x="6" y="6" width="182" height="320" fill="url(#phoneScreenCat)"/>
+
+        <!-- Dynamic Island -->
+        <rect x="57" y="14" width="80" height="20" rx="10" fill="#000000"/>
+        <circle cx="70" cy="24" r="4" fill="#18181b"/>
+        <circle cx="118" cy="24" r="3.5" fill="#10b981"/>
+
+        <!-- Status Bar -->
+        <text x="26" y="27" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">09:41</text>
+        <rect x="150" y="21" width="10" height="6" fill="#ffffff"/>
+
+        <!-- App Header Inside Phone -->
+        <rect x="16" y="44" width="162" height="34" rx="10" fill="#059669"/>
+        <text x="26" y="60" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800">PestaGo</text>
+        <text x="70" y="60" fill="#a7f3d0" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700">Catering</text>
+        <text x="26" y="71" fill="#ffffff" opacity="0.9" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">Halal Certified • Free Tasting</text>
+
+        <!-- Main Card inside Phone -->
+        <g transform="translate(16, 86)">
+          <rect width="162" height="152" rx="12" fill="#ffffff"/>
+
+          <!-- Catering Buffet Stage Preview -->
+          <rect x="0" y="0" width="162" height="74" rx="12" fill="#042f2e"/>
+          <!-- Dishes & Plates Illustration -->
+          <circle cx="81" cy="38" r="24" fill="#0f766e"/>
+          <circle cx="81" cy="38" r="18" fill="#f8fafc" stroke="#fbbf24" stroke-width="1.5"/>
+          <circle cx="81" cy="38" r="12" fill="#d97706"/>
+          <circle cx="44" cy="40" r="14" fill="#f8fafc"/>
+          <circle cx="118" cy="40" r="14" fill="#f8fafc"/>
+
+          <!-- Tag -->
+          <rect x="8" y="7" width="68" height="15" rx="7.5" fill="#059669"/>
+          <text x="14" y="17.5" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700">★ CHEF CHOICE</text>
+
+          <!-- Package Details -->
+          <text x="9" y="90" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800">Prasmanan Nusantara VIP</text>
+          <text x="9" y="101" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">500 Pax • 8 Menu Utama • Dessert</text>
+          <text x="9" y="113" fill="#f59e0b" font-size="7.5">★★★★★ <tspan fill="#64748b">4.95 (210 Review)</tspan></text>
+
+          <!-- Price -->
+          <text x="9" y="129" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5">Mulai Dari</text>
+          <text x="9" y="142" fill="#059669" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="800">Rp 18.500.000</text>
+
+          <!-- Checkmark Badge -->
+          <circle cx="144" cy="135" r="10" fill="#10b981"/>
+          <path d="M 140,135 L 143,138 L 148,132" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+
+        <!-- Booking Button -->
+        <rect x="16" y="246" width="162" height="30" rx="15" fill="#059669"/>
+        <text x="44" y="265" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="700">Pesan Test Food ➔</text>
+
+        <!-- Safe area indicator -->
+        <rect x="56" y="312" width="80" height="3" rx="1.5" fill="#ffffff" opacity="0.6"/>
+      </g>
+    </g>
+  </g>
+</svg>

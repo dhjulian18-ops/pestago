@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hatRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde2d1"/>
+      <stop offset="100%" stop-color="#e8b99d"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <filter id="fShad" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#fShad)" transform="translate(10, 5)">
+    <!-- Hair -->
+    <path d="M 50,65 C 40,80 40,110 45,125 C 55,120 60,95 62,75 Z" fill="url(#hair)"/>
+    <path d="M 85,65 C 95,80 98,110 95,125 C 85,120 80,95 78,75 Z" fill="url(#hair)"/>
+
+    <!-- Neck & Shoulders -->
+    <path d="M 55,90 L 85,90 L 92,125 L 48,125 Z" fill="url(#skin)"/>
+
+    <!-- Head / Face -->
+    <ellipse cx="70" cy="72" rx="16" ry="19" fill="url(#skin)"/>
+
+    <!-- Top Off-Shoulder Outfit (Floral / Printed) -->
+    <path d="M 42,108 C 55,100 85,100 98,108 L 105,135 L 35,135 Z" fill="#fee2e2"/>
+    <!-- Red Floral dots -->
+    <circle cx="50" cy="118" r="2.5" fill="#ef4444"/>
+    <circle cx="65" cy="125" r="3" fill="#ef4444"/>
+    <circle cx="78" cy="116" r="2.5" fill="#ef4444"/>
+    <circle cx="90" cy="126" r="3" fill="#ef4444"/>
+
+    <!-- Blue Denim Skirt / Bottom -->
+    <path d="M 45,135 L 95,135 L 98,145 L 42,145 Z" fill="#2563eb"/>
+
+    <!-- Wide Red Sun Hat on Head & Hand holding it -->
+    <!-- Large Hat Brim tilted -->
+    <ellipse cx="98" cy="85" rx="32" ry="18" transform="rotate(-30 98 85)" fill="url(#hatRed)"/>
+    <ellipse cx="98" cy="85" rx="16" ry="10" transform="rotate(-30 98 85)" fill="#991b1b"/>
+  </g>
+</svg>

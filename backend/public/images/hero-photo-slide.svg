@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="100%" height="100%">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="cineCardShadow" x="-5%" y="-5%" width="110%" height="118%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- 3D Popout Shadow -->
+    <filter id="cinePopoutShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Warm Sapphire Glow Behind 3D Graphic -->
+    <radialGradient id="glowCinema" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#1d4ed8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Luxury Midnight Card Background -->
+    <linearGradient id="bgCinema" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#03081a"/>
+      <stop offset="50%" stop-color="#102353"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Metallic Sapphire Stroke -->
+    <linearGradient id="cinemaBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#2563eb" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Phone Bezel Gradient -->
+    <linearGradient id="phoneBezelCine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="35%" stop-color="#2563eb"/>
+      <stop offset="70%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Screen Gradient -->
+    <linearGradient id="phoneScreenCine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#09132b"/>
+      <stop offset="60%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BASE CARD (Dimensions: 800 x 296, leaving space for 3D Popout) -->
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="url(#bgCinema)" filter="url(#cineCardShadow)"/>
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="none" stroke="url(#cinemaBorder)" stroke-width="1.5"/>
+
+  <!-- Subtle Ambient Pattern inside Card Base -->
+  <circle cx="200" cy="80" r="140" fill="#3b82f6" opacity="0.05"/>
+  <circle cx="700" cy="260" r="180" fill="#60a5fa" opacity="0.04"/>
+
+  <!-- LEFT CONTENT AREA: Typography & CTA -->
+  <g transform="translate(64, 72)">
+    <!-- Pill Category Badge -->
+    <rect x="0" y="0" width="236" height="26" rx="13" fill="#3b82f6" fill-opacity="0.18" stroke="#60a5fa" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="14" y="17" fill="#93c5fd" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">★ DOKUMENTASI &amp; SINEMATIK 4K</text>
+
+    <!-- Headline -->
+    <text x="0" y="62" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.5">Paket Sinematik Rp 8.000.000*</text>
+
+    <!-- Description Lines -->
+    <text x="0" y="96" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">Foto cinematic 4K, video teaser reels Instagram,</text>
+    <text x="0" y="117" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">pilot drone berlisensi &amp; live multi-camera wedding.</text>
+
+    <!-- CTA Button -->
+    <g transform="translate(0, 142)">
+      <rect width="216" height="44" rx="22" fill="#ffffff" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.18))"/>
+      <text x="108" y="27" text-anchor="middle" fill="#1e3a8a" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.3">PILIH DOKUMENTASI ➔</text>
+    </g>
+
+    <!-- Footnote Guarantee -->
+    <text x="2" y="212" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500">*Termasuk Album Mewah, Flashdisk &amp; Master RAW Lengkap</text>
+  </g>
+
+  <!-- RIGHT CONTENT AREA: 3D Pop-Out Graphics (Pops out into transparent space!) -->
+  <g id="popout3DCinema">
+    <!-- Ambient Radial Glow behind the phone -->
+    <circle cx="640" cy="180" r="160" fill="url(#glowCinema)"/>
+
+    <!-- Floating Sparkles & Cinema Elements -->
+    <circle cx="510" cy="70" r="3.5" fill="#93c5fd"/>
+    <circle cx="780" cy="95" r="4.5" fill="#bfdbfe"/>
+    <polygon points="530,40 533,46 540,48 534,50 531,56 528,50 522,48 528,46" fill="#93c5fd"/>
+
+    <!-- 3D Drone Floating on Left of Phone (Popping above the card frame) -->
+    <g transform="translate(470, 85) rotate(-10)" filter="drop-shadow(0 8px 14px rgba(0,0,0,0.4))">
+      <!-- Drone Body -->
+      <ellipse cx="35" cy="22" rx="18" ry="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+      <!-- Camera Gimbal -->
+      <circle cx="35" cy="28" r="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <circle cx="35" cy="28" r="2" fill="#38bdf8"/>
+      <!-- Drone Arms -->
+      <line x1="12" y1="12" x2="58" y2="32" stroke="#475569" stroke-width="2.5"/>
+      <line x1="12" y1="32" x2="58" y2="12" stroke="#475569" stroke-width="2.5"/>
+      <!-- Propellers Spinning Blurs -->
+      <ellipse cx="12" cy="12" rx="10" ry="2.5" fill="#94a3b8" opacity="0.6"/>
+      <ellipse cx="58" cy="32" rx="10" ry="2.5" fill="#94a3b8" opacity="0.6"/>
+      <ellipse cx="12" cy="32" rx="10" ry="2.5" fill="#94a3b8" opacity="0.6"/>
+      <ellipse cx="58" cy="12" rx="10" ry="2.5" fill="#94a3b8" opacity="0.6"/>
+    </g>
+
+    <!-- The 3D Phone Mockup (Popping out at y: 14 to 346) -->
+    <g filter="url(#cinePopoutShadow)" transform="translate(540, 14)">
+      <!-- Outer Phone Body -->
+      <rect x="0" y="0" width="194" height="332" rx="36" fill="#03081a" stroke="url(#phoneBezelCine)" stroke-width="3.5"/>
+
+      <!-- Screen Container -->
+      <g clip-path="url(#cinePhoneClip)">
+        <clipPath id="cinePhoneClip">
+          <rect x="6" y="6" width="182" height="320" rx="30"/>
+        </clipPath>
+
+        <!-- Screen Background -->
+        <rect x="6" y="6" width="182" height="320" fill="url(#phoneScreenCine)"/>
+
+        <!-- Dynamic Island -->
+        <rect x="57" y="14" width="80" height="20" rx="10" fill="#000000"/>
+        <circle cx="70" cy="24" r="4" fill="#18181b"/>
+        <circle cx="118" cy="24" r="3.5" fill="#2563eb"/>
+
+        <!-- Status Bar -->
+        <text x="26" y="27" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">09:41</text>
+        <rect x="150" y="21" width="10" height="6" fill="#ffffff"/>
+
+        <!-- App Header Inside Phone -->
+        <rect x="16" y="44" width="162" height="34" rx="10" fill="#1e3a8a"/>
+        <text x="26" y="60" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800">PestaGo</text>
+        <text x="70" y="60" fill="#93c5fd" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700">Cinematic</text>
+        <text x="26" y="71" fill="#ffffff" opacity="0.9" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">Sony FX3 Cinema • Drone 4K</text>
+
+        <!-- Main Card inside Phone -->
+        <g transform="translate(16, 86)">
+          <rect width="162" height="152" rx="12" fill="#ffffff"/>
+
+          <!-- Camera Screen Preview -->
+          <rect x="0" y="0" width="162" height="74" rx="12" fill="#0f172a"/>
+          <!-- Lens aperture circles -->
+          <circle cx="81" cy="37" r="26" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+          <circle cx="81" cy="37" r="18" fill="#0f172a"/>
+          <circle cx="81" cy="37" r="10" fill="#1d4ed8"/>
+          <!-- REC dot -->
+          <circle cx="18" cy="16" r="4" fill="#ef4444"/>
+          <text x="26" y="19" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="700">REC 4K</text>
+
+          <!-- Tag -->
+          <rect x="96" y="8" width="56" height="15" rx="7.5" fill="#2563eb"/>
+          <text x="103" y="18.5" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700">★ TRENDING</text>
+
+          <!-- Package Details -->
+          <text x="9" y="90" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800">Cinema Wedding Reels 4K</text>
+          <text x="9" y="101" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">2 Videographer + 1 Drone Pilot</text>
+          <text x="9" y="113" fill="#f59e0b" font-size="7.5">★★★★★ <tspan fill="#64748b">5.0 (98 Review)</tspan></text>
+
+          <!-- Price -->
+          <text x="9" y="129" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5">Paket Lengkap</text>
+          <text x="9" y="142" fill="#1e3a8a" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="800">Rp 8.000.000</text>
+
+          <!-- Checkmark Badge -->
+          <circle cx="144" cy="135" r="10" fill="#10b981"/>
+          <path d="M 140,135 L 143,138 L 148,132" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+
+        <!-- Booking Button -->
+        <rect x="16" y="246" width="162" height="30" rx="15" fill="#1e3a8a"/>
+        <text x="44" y="265" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="700">Lihat Portofolio ➔</text>
+
+        <!-- Safe area indicator -->
+        <rect x="56" y="312" width="80" height="3" rx="1.5" fill="#ffffff" opacity="0.6"/>
+      </g>
+    </g>
+  </g>
+</svg>

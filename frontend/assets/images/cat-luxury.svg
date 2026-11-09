@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bagPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbcfe8"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <filter id="bShad" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#bShad)" transform="translate(10, 10)">
+    <!-- Handbag Handles -->
+    <path d="M 52,65 C 52,38 88,38 88,65" fill="none" stroke="#f472b6" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 54,65 C 54,42 86,42 86,65" fill="none" stroke="#fbcfe8" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Gold Rings -->
+    <circle cx="52" cy="65" r="3.5" fill="url(#gold)"/>
+    <circle cx="88" cy="65" r="3.5" fill="url(#gold)"/>
+
+    <!-- Trapezoid Bag Body -->
+    <path d="M 40,65 L 100,65 L 112,120 L 28,120 Z" fill="url(#bagPink)"/>
+
+    <!-- Bag Stitching & Texture -->
+    <path d="M 42,68 L 98,68 L 108,118 L 32,118 Z" fill="none" stroke="#fdf2f8" stroke-width="1" stroke-dasharray="2,3"/>
+
+    <!-- Front Belt / Flap & Lock -->
+    <path d="M 60,65 L 80,65 L 78,85 L 62,85 Z" fill="#fdf2f8"/>
+    <rect x="66" y="80" width="8" height="10" rx="2" fill="url(#gold)"/>
+    <circle cx="70" cy="85" r="1.5" fill="#713f12"/>
+  </g>
+</svg>

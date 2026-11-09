@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="100%" height="100%">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="118%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0f172a" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- Phone Popout Shadow -->
+    <filter id="popoutShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Warm Glow Behind 3D Graphic -->
+    <radialGradient id="glowWedding" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#d81a24" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1a0408" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Luxury Card Background -->
+    <linearGradient id="bgWedding" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e050a"/>
+      <stop offset="50%" stop-color="#2d0811"/>
+      <stop offset="100%" stop-color="#140206"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Stroke -->
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#b45309" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Phone Bezel Gradient -->
+    <linearGradient id="phoneBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#d97706"/>
+      <stop offset="70%" stop-color="#451a03"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+
+    <!-- Screen Gradient -->
+    <linearGradient id="phoneScreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c070c"/>
+      <stop offset="60%" stop-color="#2a0812"/>
+      <stop offset="100%" stop-color="#130307"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BASE CARD (Dimensions: 800 x 296, leaving 20px top & bottom for 3D Popout) -->
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="url(#bgWedding)" filter="url(#cardShadow)"/>
+  <rect x="20" y="32" width="800" height="296" rx="24" fill="none" stroke="url(#goldBorder)" stroke-width="1.5"/>
+
+  <!-- Subtle Ambient Pattern/Ornaments inside Card Base -->
+  <circle cx="200" cy="80" r="140" fill="#f43f5e" opacity="0.04"/>
+  <circle cx="700" cy="260" r="180" fill="#fbbf24" opacity="0.04"/>
+
+  <!-- LEFT CONTENT AREA: Typography & CTA (Fully integrated into banner artwork) -->
+  <g transform="translate(64, 72)">
+    <!-- Pill Category Badge -->
+    <rect x="0" y="0" width="232" height="26" rx="13" fill="#fbbf24" fill-opacity="0.15" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="14" y="17" fill="#fde047" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">★ PAKET WEDDING &amp; ACARA SPESIAL</text>
+
+    <!-- Headline -->
+    <text x="0" y="62" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.5">Mulai Rp 25.000.000*</text>
+
+    <!-- Description Lines -->
+    <text x="0" y="96" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">Gedung mewah, catering 500 porsi, dekorasi pelaminan</text>
+    <text x="0" y="117" fill="#f1f5f9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" opacity="0.92">&amp; dokumentasi sinematik lengkap.</text>
+
+    <!-- CTA Button -->
+    <g transform="translate(0, 142)">
+      <rect width="216" height="44" rx="22" fill="#ffffff" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.18))"/>
+      <text x="108" y="27" text-anchor="middle" fill="#991b1b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.3">PESAN PAKET SEKARANG ➔</text>
+    </g>
+
+    <!-- Footnote Guarantee -->
+    <text x="2" y="212" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500">*Garansi Vendor Terverifikasi &amp; Cashback PestaGo</text>
+  </g>
+
+  <!-- RIGHT CONTENT AREA: 3D Pop-Out Graphics (Breaks out of the frame into transparent space!) -->
+  <!-- Top boundary is at y=12 (pops 20px ABOVE card base at y=32), bottom at y=348 (pops 20px BELOW card base at y=328) -->
+  <g id="popout3DGraphics">
+    <!-- Ambient Radial Glow behind the phone -->
+    <circle cx="640" cy="180" r="160" fill="url(#glowWedding)"/>
+
+    <!-- Golden Sparkles & Confetti popping out in space -->
+    <circle cx="510" cy="70" r="3.5" fill="#fde047"/>
+    <circle cx="780" cy="95" r="4.5" fill="#fbbf24"/>
+    <circle cx="480" cy="270" r="3" fill="#fbbf24"/>
+    <polygon points="530,40 533,46 540,48 534,50 531,56 528,50 522,48 528,46" fill="#fde047"/>
+    <polygon points="760,45 762,50 768,51 763,53 761,58 758,53 753,51 758,50" fill="#fde047"/>
+
+    <!-- 3D Floating Gold Wedding Ring (Popping above the phone top left) -->
+    <g transform="translate(485, 95) rotate(-22)">
+      <ellipse cx="25" cy="25" rx="24" ry="14" fill="none" stroke="url(#phoneBezel)" stroke-width="6" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.3))"/>
+      <ellipse cx="25" cy="25" rx="24" ry="14" fill="none" stroke="#fef08a" stroke-width="2"/>
+      <polygon points="25,9 28,15 34,16 29,19 31,25 25,21 19,25 21,19 16,16 22,15" fill="#ffffff"/>
+    </g>
+
+    <!-- The 3D Phone Mockup (x: 540 to 740, y: 14 to 346, height: 332px -> POPS OUT of card!) -->
+    <g filter="url(#popoutShadow)" transform="translate(540, 14)">
+      <!-- Outer Phone Body with Metallic Gold Trim -->
+      <rect x="0" y="0" width="194" height="332" rx="36" fill="#090204" stroke="url(#phoneBezel)" stroke-width="3.5"/>
+
+      <!-- Screen Container -->
+      <g clip-path="url(#weddingPhoneClip)">
+        <clipPath id="weddingPhoneClip">
+          <rect x="6" y="6" width="182" height="320" rx="30"/>
+        </clipPath>
+
+        <!-- Screen Background -->
+        <rect x="6" y="6" width="182" height="320" fill="url(#phoneScreen)"/>
+
+        <!-- Dynamic Island / Top Notch -->
+        <rect x="57" y="14" width="80" height="20" rx="10" fill="#000000"/>
+        <circle cx="70" cy="24" r="4" fill="#18181b"/>
+        <circle cx="118" cy="24" r="3.5" fill="#047857"/>
+
+        <!-- Status Bar -->
+        <text x="26" y="27" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">09:41</text>
+        <rect x="150" y="21" width="10" height="6" fill="#ffffff"/>
+
+        <!-- App Header Inside Phone -->
+        <rect x="16" y="44" width="162" height="34" rx="10" fill="#d81a24"/>
+        <text x="26" y="60" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800">PestaGo</text>
+        <text x="70" y="60" fill="#fef08a" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700">Wedding</text>
+        <text x="26" y="71" fill="#ffffff" opacity="0.9" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">Verified Vendor • Instant Booking</text>
+
+        <!-- Main Card inside Phone: Grand Ballroom Stage -->
+        <g transform="translate(16, 86)">
+          <rect width="162" height="152" rx="12" fill="#ffffff"/>
+
+          <!-- Stage Preview Graphic -->
+          <rect x="0" y="0" width="162" height="74" rx="12" fill="#1e1b4b"/>
+          <path d="M 30,74 C 30,30 132,30 132,74 Z" fill="#991b1b" opacity="0.6"/>
+          <path d="M 46,74 C 46,42 116,42 116,74 Z" fill="#fbbf24" opacity="0.7"/>
+          <circle cx="81" cy="35" r="7" fill="#fef08a"/>
+          <!-- Best Seller Tag -->
+          <rect x="8" y="7" width="62" height="15" rx="7.5" fill="#d81a24"/>
+          <text x="14" y="17.5" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700">★ BEST SELLER</text>
+
+          <!-- Package Details -->
+          <text x="9" y="90" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800">Royal Palace Wedding</text>
+          <text x="9" y="101" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5">Gedung, Catering 500 Pax, MUA</text>
+          <text x="9" y="113" fill="#f59e0b" font-size="7.5">★★★★★ <tspan fill="#64748b">4.9 (128 Review)</tspan></text>
+
+          <!-- Price -->
+          <text x="9" y="129" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5">Harga Spesial</text>
+          <text x="9" y="142" fill="#d81a24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="800">Rp 25.000.000</text>
+
+          <!-- Checkmark Badge -->
+          <circle cx="144" cy="135" r="10" fill="#10b981"/>
+          <path d="M 140,135 L 143,138 L 148,132" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+
+        <!-- Booking Button at bottom -->
+        <rect x="16" y="246" width="162" height="30" rx="15" fill="#d81a24"/>
+        <text x="44" y="265" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="700">Konfirmasi Booking ➔</text>
+
+        <!-- Safe area home indicator bar -->
+        <rect x="56" y="312" width="80" height="3" rx="1.5" fill="#ffffff" opacity="0.6"/>
+      </g>
+    </g>
+  </g>
+</svg>

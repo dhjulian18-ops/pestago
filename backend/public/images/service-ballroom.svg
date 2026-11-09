@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ballroomBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181329"/>
+      <stop offset="45%" stop-color="#2d1b42"/>
+      <stop offset="85%" stop-color="#1e1628"/>
+      <stop offset="100%" stop-color="#120c1a"/>
+    </linearGradient>
+    <radialGradient id="chandelierGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#f59e0b" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#b45309" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#181329" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldChandelier" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="carpetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#991b1b"/>
+      <stop offset="60%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#7f1d1d"/>
+    </linearGradient>
+    <linearGradient id="marblePillars" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="30%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hall Background -->
+  <rect width="600" height="380" fill="url(#ballroomBg)"/>
+
+  <!-- Grand Architectural Arches -->
+  <g opacity="0.25">
+    <path d="M 50,380 L 50,140 Q 300,-20 550,140 L 550,380" fill="none" stroke="#fde68a" stroke-width="4"/>
+    <path d="M 100,380 L 100,160 Q 300,20 500,160 L 500,380" fill="none" stroke="#fde68a" stroke-width="2"/>
+    <path d="M 150,380 L 150,180 Q 300,60 450,180 L 450,380" fill="none" stroke="#fde68a" stroke-width="1.5"/>
+  </g>
+
+  <!-- Side Classical Marble Columns -->
+  <!-- Left Pillar -->
+  <rect x="50" y="80" width="34" height="300" fill="url(#marblePillars)" opacity="0.85"/>
+  <rect x="42" y="70" width="50" height="14" rx="3" fill="url(#goldChandelier)"/>
+  <rect x="40" y="340" width="54" height="20" rx="3" fill="#cbd5e1"/>
+  <!-- Right Pillar -->
+  <rect x="516" y="80" width="34" height="300" fill="url(#marblePillars)" opacity="0.85"/>
+  <rect x="508" y="70" width="50" height="14" rx="3" fill="url(#goldChandelier)"/>
+  <rect x="506" y="340" width="54" height="20" rx="3" fill="#cbd5e1"/>
+
+  <!-- Ambient Light from Chandelier -->
+  <circle cx="300" cy="110" r="230" fill="url(#chandelierGlow)"/>
+
+  <!-- Fairy String Lights across Ceiling -->
+  <path d="M 80,70 Q 300,120 520,70" fill="none" stroke="#fde047" stroke-width="2" opacity="0.5"/>
+  <path d="M 80,110 Q 300,160 520,110" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.4"/>
+  <g fill="#fef08a" opacity="0.85">
+    <circle cx="120" cy="80" r="3"/>
+    <circle cx="160" cy="94" r="3.5"/>
+    <circle cx="210" cy="107" r="3"/>
+    <circle cx="260" cy="115" r="4"/>
+    <circle cx="340" cy="115" r="4"/>
+    <circle cx="390" cy="107" r="3"/>
+    <circle cx="440" cy="94" r="3.5"/>
+    <circle cx="480" cy="80" r="3"/>
+  </g>
+
+  <!-- Grand Crystal Chandelier Centerpiece -->
+  <g transform="translate(300, 30)">
+    <!-- Ceiling Mount & Golden Chain -->
+    <rect x="-8" y="0" width="16" height="8" rx="2" fill="url(#goldChandelier)"/>
+    <line x1="0" y1="8" x2="0" y2="40" stroke="url(#goldChandelier)" stroke-width="4"/>
+
+    <!-- Top Crown Ring -->
+    <ellipse cx="0" cy="40" rx="28" ry="8" fill="url(#goldChandelier)"/>
+    <!-- Upper Cascading Crystals -->
+    <path d="M -28,40 Q 0,70 28,40 L 0,85 Z" fill="#ffffff" opacity="0.75"/>
+    <path d="M -20,40 L 0,80 L 20,40" stroke="#fef08a" stroke-width="1" fill="none"/>
+
+    <!-- Main Tier Ring -->
+    <ellipse cx="0" cy="85" rx="55" ry="14" fill="url(#goldChandelier)"/>
+    <!-- Crystal Droplets Hanging from Main Tier -->
+    <g stroke="#ffffff" stroke-width="1.5" opacity="0.9">
+      <line x1="-50" y1="90" x2="-50" y2="120"/>
+      <line x1="-40" y1="94" x2="-40" y2="132"/>
+      <line x1="-30" y1="97" x2="-30" y2="142"/>
+      <line x1="-20" y1="98" x2="-20" y2="152"/>
+      <line x1="-10" y1="99" x2="-10" y2="158"/>
+      <line x1="0" y1="99" x2="0" y2="162"/>
+      <line x1="10" y1="99" x2="10" y2="158"/>
+      <line x1="20" y1="98" x2="20" y2="152"/>
+      <line x1="30" y1="97" x2="30" y2="142"/>
+      <line x1="40" y1="94" x2="40" y2="132"/>
+      <line x1="50" y1="90" x2="50" y2="120"/>
+    </g>
+    <!-- Crystal Beads at tips -->
+    <g fill="#fef08a">
+      <circle cx="-50" cy="120" r="3"/>
+      <circle cx="-40" cy="132" r="3.5"/>
+      <circle cx="-30" cy="142" r="4"/>
+      <circle cx="-20" cy="152" r="4.5"/>
+      <circle cx="-10" cy="158" r="5"/>
+      <circle cx="0" cy="162" r="6"/>
+      <circle cx="10" cy="158" r="5"/>
+      <circle cx="20" cy="152" r="4.5"/>
+      <circle cx="30" cy="142" r="4"/>
+      <circle cx="40" cy="132" r="3.5"/>
+      <circle cx="50" cy="120" r="3"/>
+    </g>
+    <!-- Sparkling Star Flares -->
+    <polygon points="0,70 4,80 14,80 6,86 9,96 0,90 -9,96 -6,86 -14,80 -4,80" fill="#ffffff" opacity="0.95"/>
+    <polygon points="-30,105 -28,111 -22,111 -27,115 -25,121 -30,117 -35,121 -33,115 -38,111 -32,111" fill="#fef08a" opacity="0.9"/>
+    <polygon points="30,105 32,111 38,111 33,115 35,121 30,117 25,121 27,115 22,111 28,111" fill="#fef08a" opacity="0.9"/>
+  </g>
+
+  <!-- Grand Wedding Stage & Floral Backdrop in Distance -->
+  <rect x="180" y="240" width="240" height="40" rx="4" fill="#3b0764" opacity="0.7"/>
+  <ellipse cx="300" cy="240" rx="110" ry="18" fill="#581c87" opacity="0.8"/>
+  <!-- Stage Floral Arch -->
+  <path d="M 210,240 Q 300,180 390,240" fill="none" stroke="#f472b6" stroke-width="8" opacity="0.75"/>
+  <path d="M 220,240 Q 300,190 380,240" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.6"/>
+
+  <!-- Red Carpet Aisle -->
+  <polygon points="270,250 330,250 440,380 160,380" fill="url(#carpetGradient)"/>
+  <!-- Gold Border along Aisle -->
+  <line x1="270" y1="250" x2="160" y2="380" stroke="#fbbf24" stroke-width="3"/>
+  <line x1="330" y1="250" x2="440" y2="380" stroke="#fbbf24" stroke-width="3"/>
+
+  <!-- Banquet Tables on sides -->
+  <!-- Left Table -->
+  <ellipse cx="120" cy="310" rx="45" ry="18" fill="#ffffff" opacity="0.9"/>
+  <ellipse cx="120" cy="306" rx="42" ry="15" fill="#f8fafc"/>
+  <ellipse cx="120" cy="304" rx="14" ry="7" fill="#f43f5e" opacity="0.7"/>
+  <rect x="118" y="285" width="4" height="20" fill="#fbbf24"/>
+  <!-- Right Table -->
+  <ellipse cx="480" cy="310" rx="45" ry="18" fill="#ffffff" opacity="0.9"/>
+  <ellipse cx="480" cy="306" rx="42" ry="15" fill="#f8fafc"/>
+  <ellipse cx="480" cy="304" rx="14" ry="7" fill="#f43f5e" opacity="0.7"/>
+  <rect x="478" y="285" width="4" height="20" fill="#fbbf24"/>
+
+  <!-- Luxury Capacity Badge -->
+  <g transform="translate(30, 315)">
+    <rect width="180" height="34" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <circle cx="20" cy="17" r="4" fill="#fbbf24"/>
+    <text x="34" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="0.5">KAPASITAS 1.500 PAX</text>
+  </g>
+</svg>
