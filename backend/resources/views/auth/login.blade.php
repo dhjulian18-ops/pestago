@@ -80,6 +80,11 @@
 @section('hide_footer', 'true')
 
 @push('scripts')
+<style>
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
 <script>
 function togglePasswordVisibility(btn) {
     const input = btn.parentElement.querySelector('input');
@@ -92,5 +97,19 @@ function togglePasswordVisibility(btn) {
         icon.className = 'bi bi-eye-slash';
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('.uq-auth-form');
+    if (form) {
+        form.addEventListener('submit', function() {
+            var btn = form.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.style.opacity = '0.85';
+                btn.style.pointerEvents = 'none';
+                btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid #ffffff;border-right-color:transparent;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;vertical-align:-2px;"></span> MEMASUKI SISTEM...';
+            }
+        });
+    }
+});
 </script>
 @endpush

@@ -165,7 +165,153 @@
 <script>
 (function() {
     var lastNotificationId = 0;
-    var pollIntervalMs = 5000; // 5 detik
+    var pollIntervalMs = 8000; // 8 detik untuk efisiensi koneksi DB
+
+    // Setup Admin Notification Center Dropdown Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        var notifBtn = document.getElementById('adminNotifBtn');
+        var notifMenu = document.getElementById('adminNotifMenu');
+        if (notifBtn && notifMenu) {
+            notifBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = notifMenu.style.display === 'block';
+                notifMenu.style.display = isOpen ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!notifMenu.contains(e.target) && e.target !== notifBtn && !notifBtn.contains(e.target)) {
+                    notifMenu.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    // Render Admin Notification Center Dropdown
+    function renderAdminNotifDropdown(counts, notifications) {
+        var container = document.getElementById('adminNotifList');
+        var totalBadge = document.getElementById('adminNotifTotalBadge');
+        var topbarBadge = document.getElementById('topbarBadge-notifications');
+        if (!container) return;
+
+        var total = (counts.vendors || 0) + (counts.wallets || 0) + (counts.orders || 0) + (counts.ads || 0) + (counts.refunds || 0) + (counts.chats || 0);
+
+        if (totalBadge) {
+            totalBadge.textContent = total + ' pending';
+        }
+
+        if (topbarBadge) {
+            if (total > 0) {
+                topbarBadge.textContent = total;
+                topbarBadge.style.display = 'inline-flex';
+            } else {
+                topbarBadge.textContent = '';
+                topbarBadge.style.display = 'none';
+            }
+        }
+
+        var itemsHtml = '';
+
+        if (counts.vendors > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.vendors', ['status' => 'pending']) }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#fef2f2;color:#dc2626;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Verifikasi Vendor Baru</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.vendors} vendor menunggu ditinjau</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.vendors}</span>
+                </a>
+            `;
+        }
+
+        if (counts.wallets > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.wallets.index', ['status' => 'pending']) }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#f0fdf4;color:#16a34a;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Pencairan Saldo Vendor</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.wallets} permohonan penarikan dana</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.wallets}</span>
+                </a>
+            `;
+        }
+
+        if (counts.orders > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.orders') }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#eff6ff;color:#2563eb;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-bag"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Pesanan Menunggu Aksi</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.orders} pesanan menunggu pembayaran</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.orders}</span>
+                </a>
+            `;
+        }
+
+        if (counts.ads > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.advertisements.index') }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#fef3c7;color:#d97706;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-megaphone"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Moderasi Iklan Banner</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.ads} materi iklan menunggu review</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.ads}</span>
+                </a>
+            `;
+        }
+
+        if (counts.chats > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.chats.index') }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#f5f3ff;color:#7c3aed;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Live Chat &amp; CS Masuk</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.chats} pesan baru</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.chats}</span>
+                </a>
+            `;
+        }
+
+        if (counts.refunds > 0) {
+            itemsHtml += `
+                <a href="{{ route('admin.refunds') }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;text-decoration:none;color:#111;transition:background 0.15s;" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background='transparent'">
+                    <div style="width:34px;height:34px;background:#fff1f2;color:#e11d48;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">
+                        <i class="bi bi-arrow-return-left"></i>
+                    </div>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:12.5px;color:#111;">Pengajuan Refund</div>
+                        <div style="font-size:11.5px;color:#666;">Ada ${counts.refunds} refund pending</div>
+                    </div>
+                    <span class="uq-badge-red">${counts.refunds}</span>
+                </a>
+            `;
+        }
+
+        if (itemsHtml === '') {
+            itemsHtml = `
+                <div style="padding:24px 16px;text-align:center;color:#888888;font-size:12px;">
+                    <i class="bi bi-check2-circle" style="font-size:24px;color:#16a34a;display:block;margin-bottom:6px;"></i>
+                    Semua antrean beres! Tidak ada tugas yang tertunda.
+                </div>
+            `;
+        }
+
+        container.innerHTML = itemsHtml;
+    }
     var soundEnabled = localStorage.getItem('pestago_admin_sound_enabled') !== 'false'; // default active
 
     // Setup Web Audio API Synthesizer (Pleasant High-Quality Glass Bell Chime)
@@ -340,7 +486,7 @@
         .then(function(data) {
             if (!data.success) return;
 
-            // Update badge bulat merah di sidebar
+            // Update badge bulat merah di sidebar & dropdown antrean
             if (data.counts) {
                 updateSidebarBadge('sidebarBadge-chats', data.counts.chats);
                 updateSidebarBadge('sidebarBadge-wallets', data.counts.wallets);
@@ -348,6 +494,8 @@
                 updateSidebarBadge('sidebarBadge-orders', data.counts.orders);
                 updateSidebarBadge('sidebarBadge-refunds', data.counts.refunds);
                 updateSidebarBadge('sidebarBadge-ads', data.counts.ads);
+
+                renderAdminNotifDropdown(data.counts, data.notifications);
 
                 // Update topbar chat badge jika ada
                 var topbarChatBadge = document.getElementById('topbarBadge-chats');

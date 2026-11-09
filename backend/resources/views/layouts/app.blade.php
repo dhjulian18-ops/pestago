@@ -118,10 +118,35 @@
 
                 {{-- Right: Akun Admin Profil --}}
                 <div style="display:flex;align-items:center;gap:10px;">
-                    {{-- Audio Notification Sound Toggle --}}
-                    <button type="button" class="admin-sound-toggle-btn" id="adminSoundToggleBtn" onclick="toggleAdminNotificationSound()" title="Suara Notifikasi: Aktif">
-                        <i class="bi bi-bell-fill" style="color:#16a34a;"></i>
-                    </button>
+                    {{-- Admin Notification Center Dropdown --}}
+                    <div class="nav-dropdown" style="position:relative;" id="adminNotifDropdownWrapper">
+                        <button type="button" class="admin-sound-toggle-btn" id="adminNotifBtn" style="position:relative;" title="Pusat Notifikasi Admin">
+                            <i class="bi bi-bell" style="font-size:16px;color:#111111;"></i>
+                            <span id="topbarBadge-notifications" class="uq-badge-red" style="position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;font-size:10px;padding:0 4px;border-radius:9px;background:#D81A24;color:#fff;font-weight:800;display:none;">0</span>
+                        </button>
+                        <div class="nav-dropdown-menu" id="adminNotifMenu" style="right:0;left:auto;width:340px;max-width:calc(100vw - 32px);padding:0;margin-top:8px;box-shadow:0 12px 30px rgba(0,0,0,0.15);border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;display:none;position:absolute;background:#fff;z-index:9999;">
+                            <div style="padding:12px 16px;background:#fafafa;border-bottom:1px solid #ebebeb;display:flex;align-items:center;justify-content:space-between;">
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <strong style="font-size:13px;color:#111111;font-weight:800;">Notifikasi &amp; Antrean</strong>
+                                    <span id="adminNotifTotalBadge" style="background:#fee2e2;color:#dc2626;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;">0 pending</span>
+                                </div>
+                                <button type="button" id="adminSoundToggleBtn" onclick="toggleAdminNotificationSound()" style="background:none;border:none;cursor:pointer;padding:2px 6px;font-size:13px;color:#555;display:flex;align-items:center;gap:4px;" title="Beralih Suara Notifikasi">
+                                    <i class="bi bi-bell-fill" style="color:#16a34a;"></i>
+                                </button>
+                            </div>
+                            <div id="adminNotifList" style="max-height:360px;overflow-y:auto;">
+                                <div style="padding:24px 16px;text-align:center;color:#888888;font-size:12px;">
+                                    <i class="bi bi-check2-circle" style="font-size:24px;color:#16a34a;display:block;margin-bottom:6px;"></i>
+                                    Memuat notifikasi antrean...
+                                </div>
+                            </div>
+                            <div style="padding:8px 16px;background:#fafafa;border-top:1px solid #ebebeb;text-align:center;">
+                                <a href="{{ route('admin.dashboard') }}" style="font-size:11.5px;font-weight:700;color:#D81A24;text-decoration:none;">
+                                    Buka Ringkasan Dashboard &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                     @php $adminUnreadMessages = auth()->user()->unreadMessagesCount(); @endphp
                     @if(auth()->user()->hasPermission('chats'))
